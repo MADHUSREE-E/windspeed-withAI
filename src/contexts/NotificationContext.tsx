@@ -213,7 +213,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
           const absChange = Math.abs(change);
 
           // Wind change ≥ 0.1 m/s → alert (testing)
-          if (absChange >= 0.1) {
+          if (absChange >= 0) {
             const dir = change > 0 ? 'increased' : 'decreased';
             newNotifications.push({
               id: Date.now() + Math.random(),
