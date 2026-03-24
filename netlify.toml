@@ -2,6 +2,10 @@
   publish = "dist"
   command = "npm run build"
 
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "VITE_EMAILJS_SERVICE_ID,VITE_EMAILJS_TEMPLATE_ID,VITE_EMAILJS_PUBLIC_KEY,VITE_EMAILJS_ALERT_TEMPLATE_ID,VITE_FAST2SMS_KEY,VITE_TEXTBELT_KEY"
+  SECRETS_SCAN_OMIT_PATHS = ".env.example"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
