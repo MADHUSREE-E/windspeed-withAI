@@ -53,7 +53,7 @@ async function showMobileNotification(title: string, body: string, tag: string) 
         icon: '/favicon.ico',
         badge: '/favicon.ico',
         tag,
-        vibrate: [200, 100, 200],
+        // vibrate: [200, 100, 200],
         // @ts-ignore - actions supported in Chrome
         actions: [{ action: 'view', title: 'View Details' }],
       });
