@@ -41,7 +41,7 @@ interface NotificationContextType {
 const NotificationContext = createContext<NotificationContextType | null>(null);
 
 const API_KEY = '1f17f795128639f79920cea6fe9dcfd4';
-const POLL_INTERVAL = 2 * 60 * 1000; // 2 minutes for real-time feel
+const POLL_INTERVAL = 10 * 1000; // 10 seconds for testing
 
 // Show notification via service worker (works on mobile) or fallback to browser Notification API
 async function showMobileNotification(title: string, body: string, tag: string) {
@@ -212,8 +212,8 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
           const change = newWindSpeed - prev.lastWindSpeed;
           const absChange = Math.abs(change);
 
-          // Wind change ≥ 3 m/s → alert
-          if (absChange >= 3) {
+          // Wind change ≥ 0.1 m/s → alert (testing)
+          if (absChange >= 0.1) {
             const dir = change > 0 ? 'increased' : 'decreased';
             newNotifications.push({
               id: Date.now() + Math.random(),
@@ -335,8 +335,8 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   }, []); // eslint-disable-line
 
   useEffect(() => {
-    // First poll after 15 seconds, then every 2 minutes
-    pollTimeoutRef.current = window.setTimeout(pollSubscriptions, 15000);
+    // First poll after 3 seconds (testing), then every 10 seconds
+    pollTimeoutRef.current = window.setTimeout(pollSubscriptions, 3000);
     return () => { if (pollTimeoutRef.current) clearTimeout(pollTimeoutRef.current); };
   }, []); // eslint-disable-line
 
