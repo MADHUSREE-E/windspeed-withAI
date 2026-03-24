@@ -1,0 +1,41 @@
+{
+  "name": "WindCast Pro",
+  "short_name": "WindCast",
+  "description": "Real-time wind speed forecasting and power generation analytics",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "categories": ["weather", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Wind Prediction",
+      "short_name": "Predict",
+      "description": "Get real-time wind forecast",
+      "url": "/prediction"
+    },
+    {
+      "name": "Live Monitor",
+      "short_name": "Monitor",
+      "description": "Monitor multiple cities",
+      "url": "/monitor"
+    }
+  ]
+}
